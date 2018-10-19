@@ -43,8 +43,8 @@ $(document).on("click", "p", function () {
           // A textarea to add a new note body
           $("#notes").append("<textarea id='bodyinput name='body' >" + data.note[i].body + "</textarea>");
           // A button to submit a new note, with the id of the article saved to it
-          $("#notes").append("<button data-id='" + data._id + "' id='savenote'>Save Note</button>");
-          $("#notes").append("<button data-id='" + data._id + "' id='deletenote'>Delete Note</button>");
+          $("#notes").append("<button data-id='" + data.note[i]._id + "' id='savenote'>Save Note</button>");
+          $("#notes").append("<button data-id='" + data.note[i]._id + "' id='deletenote'>Delete Note</button>");
         };
 
       }
@@ -98,10 +98,7 @@ $(document).on("click", "#deletenote", function () {
     method: "DELETE",
     url: "/articles/" + thisId,
     data: {
-      // Value taken from title input
-      title: $("#titleinput").val(),
-      // Value taken from note textarea
-      body: $("#bodyinput").val()
+      _id: thisId
     }
   })
     // With that done
@@ -117,6 +114,5 @@ $(document).on("click", "#deletenote", function () {
     });
 
   // Also, remove the values entered in the input and textarea for note entry
-  $("#titleinput").val("");
-  $("#bodyinput").val("");
+  $("#notes").empty();
 });

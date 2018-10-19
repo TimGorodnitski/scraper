@@ -1,43 +1,73 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>Tim's Little News Scraper</title>
-    <style>
-      body { background-color: #cccccc }
-      #wrapper {
-        width: 960px;
-        margin-left: auto;
-        margin-right: auto;
-        padding-top: 5%;
-      }
-      #articles {
-        display: inline-block;
-        background-color: #ffffff;
-        overflow: auto;
-        width: 60%;
-        height: 700px;
-      }
-      #notes {
-        float: right;
-        width: 30%;
-      }
-      textarea, input {
-        display: block;
-        width: 100%;
-        background-color: lemonchiffon;
-      }
-      input {
-        height: 36px;
-        font-size: 24px;
-      }
-      textarea {
-        height: 200px;
-        font-size: 18px;
-      }
-    </style>
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.0.0/materia/bootstrap.min.css">
+  <title>Tim's Little News Scraper</title>
+  <style>
+    body {
+      background-color: #cccccc
+    }
+
+    .jumbotron .background-image {
+      height: 100%;
+      background-image: url(espnbg.jpg);
+      background-size: cover;
+    }
+    
+
+    #wrapper {
+      width: 960px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 5%;
+    }
+
+    #articles {
+      display: inline-block;
+      background-color: #ffffff;
+      overflow: auto;
+      width: 60%;
+      height: 700px;
+    }
+
+    #notes {
+      float: right;
+      width: 30%;
+    }
+
+    textarea,
+    input {
+      display: block;
+      width: 100%;
+      background-color: lemonchiffon;
+    }
+
+    input {
+      height: 36px;
+      font-size: 24px;
+    }
+
+    textarea {
+      height: 200px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="jumbotron text-center">
+    <div class="overlay">
+    </div>
+    <div class="background-image">
+    </div>
+    <div class="caption">
+      <h1>Tim's Little Scraper</h1>
+      <p>ESPN Articles</p>
+    </div>
+  </div>
+  <div class="container-fluid article-container">
     <div id="wrapper">
       <a href="/scrape">Scrape</a>
       <h1>Here's the News</h1>
@@ -47,5 +77,6 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="app.js"></script>
-  </body>
+</body>
+
 </html>
